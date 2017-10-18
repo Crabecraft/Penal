@@ -1,0 +1,14 @@
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Debug\FK_NewPenal.exe.config
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Debug\FK_NewPenal.exe
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Debug\FK_NewPenal.pdb
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.csprojResolveAssemblyReference.cache
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.Form1.resources
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.Properties.Resources.resources
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.csproj.GenerateResource.Cache
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.exe
+c:\users\рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.pdb
+C:\Users\Рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Debug\FK_NewPenal.exe.manifest
+C:\Users\Рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Debug\FK_NewPenal.application
+C:\Users\Рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.exe.manifest
+C:\Users\Рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.application
+C:\Users\Рома\documents\visual studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Debug\FK_NewPenal.Form2.resources

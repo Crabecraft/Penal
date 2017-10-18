@@ -1,0 +1,17 @@
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Release\FK_NewPenal.exe.config
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.Form1.resources
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.Form2.resources
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.Properties.Resources.resources
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.GenerateResource.Cache
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Release\FK_NewPenal.exe.manifest
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Release\FK_NewPenal.application
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Release\FK_NewPenal.exe
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\bin\Release\FK_NewPenal.pdb
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.application
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.exe
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.pdb
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.наборы_присадки.resources
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.EditBazaForm.resources
+C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.blok.resources
+c:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
