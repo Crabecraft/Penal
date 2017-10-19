@@ -15,3 +15,20 @@ C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\
 C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.EditBazaForm.resources
 C:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.blok.resources
 c:\Users\рома\Documents\Visual Studio 2012\Projects\FK_NewPenal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
+C:\Users\Poma\Penal\FK_NewPenal\bin\Release\FK_NewPenal.exe.config
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.pdb
+C:\Users\Poma\Penal\FK_NewPenal\bin\Release\FK_NewPenal.exe.manifest
+C:\Users\Poma\Penal\FK_NewPenal\bin\Release\FK_NewPenal.application
+C:\Users\Poma\Penal\FK_NewPenal\bin\Release\FK_NewPenal.exe
+C:\Users\Poma\Penal\FK_NewPenal\bin\Release\FK_NewPenal.pdb
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.blok.resources
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.EditBazaForm.resources
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.Form1.resources
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.Form2.resources
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.Properties.Resources.resources
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.наборы_присадки.resources
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.GenerateResource.Cache
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
+C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.application

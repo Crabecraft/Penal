@@ -36,10 +36,10 @@ namespace FK_NewPenal
 
                 int top = getint(float.Parse(temp[0])*0.3f);
                 int height = getint(float.Parse(temp[1])*0.3f);
-                panel1.Controls.Add(new blok() { Left = xnul, Top = nullpos - top - height, Width = widthPenal, Height = height, BackColor = System.Drawing.SystemColors.ActiveCaptionText, BorderStyle = BorderStyle.FixedSingle });
+                panel1.Controls.Add(new blok() { Left = xnul, Top = nullpos - top - height, Width = widthPenal, Height = height, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
             }
-            panel1.Controls.Add(new Panel() { Left = xnul, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.SystemColors.ActiveCaptionText, BorderStyle = BorderStyle.FixedSingle });
-            panel1.Controls.Add(new Panel() { Left = xnul + widthPenal - 6, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.SystemColors.ActiveCaptionText, BorderStyle = BorderStyle.FixedSingle });
+            panel1.Controls.Add(new Panel() { Left = xnul, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
+            panel1.Controls.Add(new Panel() { Left = xnul + widthPenal - 6, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
           
             if (form1.arrUrovni != null)
                 for (int i = 0; i < form1.arrUrovni.Count; i++)
@@ -47,7 +47,7 @@ namespace FK_NewPenal
                     float urr = float.Parse(form1.arrUrovni[i].ToString().Replace(",", "."));
                     urovni.Add(urr);
                     int top = getint(urr * 0.3f);
-                    panel1.Controls.Add(new blok() { Left = xnul + 6, Top = nullpos - top - 3, Width = widthPenal - 12, Height = 6, BackColor = System.Drawing.SystemColors.ActiveCaptionText, BorderStyle = BorderStyle.FixedSingle });
+                    panel1.Controls.Add(new blok() { Left = xnul + 6, Top = nullpos - top - 3, Width = widthPenal - 12, Height = 6, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
                 }
 
 
@@ -67,7 +67,7 @@ namespace FK_NewPenal
                             float urovenL = urovenR;
                             polki.Add(urovenR);
                             int top = getint(urovenR * 0.3f);
-                            panel1.Controls.Add(new blok() { Left = xnul + 7, Top = nullpos - top - 6, Width = widthPenal - 14, Height = 6, BackColor = System.Drawing.SystemColors.ActiveCaptionText, BorderStyle = BorderStyle.FixedSingle });  
+                            panel1.Controls.Add(new blok() { Left = xnul + 7, Top = nullpos - top - 6, Width = widthPenal - 14, Height = 6, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });  
                         }
                         catch { }
 
