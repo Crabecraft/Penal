@@ -35,6 +35,8 @@ namespace FK_NewPenal
         #endregion
 
         float высота, уровень;
+        private TextBox textBox1;
+        private TextBox textBox2;
         private Label label1;
     
         public blok(float высота, float уровень)
@@ -70,6 +72,8 @@ namespace FK_NewPenal
             this.hKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +92,7 @@ namespace FK_NewPenal
             // фальшToolStripMenuItem
             // 
             this.фальшToolStripMenuItem.Name = "фальшToolStripMenuItem";
-            this.фальшToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.фальшToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.фальшToolStripMenuItem.Text = "Фальш";
             this.фальшToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -99,11 +103,12 @@ namespace FK_NewPenal
             this.левыйToolStripMenuItem,
             this.правыйЛевыйToolStripMenuItem});
             this.распошнойToolStripMenuItem.Name = "распошнойToolStripMenuItem";
-            this.распошнойToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.распошнойToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.распошнойToolStripMenuItem.Text = "Распашной";
             // 
             // правыйToolStripMenuItem
             // 
+            this.правыйToolStripMenuItem.AccessibleName = "PETLI";
             this.правыйToolStripMenuItem.Name = "правыйToolStripMenuItem";
             this.правыйToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.правыйToolStripMenuItem.Text = "Правый";
@@ -111,6 +116,7 @@ namespace FK_NewPenal
             // 
             // левыйToolStripMenuItem
             // 
+            this.левыйToolStripMenuItem.AccessibleName = "PETLI";
             this.левыйToolStripMenuItem.Name = "левыйToolStripMenuItem";
             this.левыйToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.левыйToolStripMenuItem.Text = "Левый";
@@ -118,6 +124,7 @@ namespace FK_NewPenal
             // 
             // правыйЛевыйToolStripMenuItem
             // 
+            this.правыйЛевыйToolStripMenuItem.AccessibleName = "PETLI";
             this.правыйЛевыйToolStripMenuItem.Name = "правыйЛевыйToolStripMenuItem";
             this.правыйЛевыйToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.правыйЛевыйToolStripMenuItem.Text = "Правый+Левый";
@@ -149,7 +156,7 @@ namespace FK_NewPenal
             this.ммToolStripMenuItem2,
             this.ммToolStripMenuItem3});
             this.мБToolStripMenuItem.Name = "мБToolStripMenuItem";
-            this.мБToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.мБToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.мБToolStripMenuItem.Text = "МБ";
             // 
             // ммToolStripMenuItem
@@ -204,7 +211,7 @@ namespace FK_NewPenal
             this.hKToolStripMenuItem,
             this.hFToolStripMenuItem});
             this.подьемникиToolStripMenuItem.Name = "подьемникиToolStripMenuItem";
-            this.подьемникиToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.подьемникиToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.подьемникиToolStripMenuItem.Text = "Подьемник";
             // 
             // газлифтToolStripMenuItem
@@ -252,10 +259,35 @@ namespace FK_NewPenal
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(55, 15);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(80, 23);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(55, 129);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(80, 23);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Visible = false;
             // 
             // blok
             // 
@@ -263,6 +295,8 @@ namespace FK_NewPenal
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -282,30 +316,24 @@ namespace FK_NewPenal
 
         private void правыйToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label1.Text = ((ToolStripMenuItem)sender).Text;
-        }
+            ToolStripMenuItem temp = (ToolStripMenuItem)sender;
 
-        private void правыйЛевыйToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void тБToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void кВToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void шарикиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+            if (temp.Text == label1.Text) return;
+            label1.Text = temp.Text;
+            label1.Left = this.Width / 2 - label1.Width / 2;
+            label1.Top = this.Height / 2 - label1.Height / 2;
+            if (temp.AccessibleName == "PETLI")
+            {
+                textBox1.Visible = textBox2.Visible = true;
+            }
+            else
+            {
+                textBox1.Visible = textBox2.Visible = false;
+            }
 
         }
 
-
+        
      
 
 
