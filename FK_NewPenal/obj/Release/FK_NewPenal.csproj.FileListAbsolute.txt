@@ -32,3 +32,19 @@ C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.наборы_приса�
 C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.GenerateResource.Cache
 C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
 C:\Users\Poma\Penal\FK_NewPenal\obj\Release\FK_NewPenal.application
+C:\Program Files\Git\Penal\FK_NewPenal\bin\Release\FK_NewPenal.exe.config
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.pdb
+C:\Program Files\Git\Penal\FK_NewPenal\bin\Release\FK_NewPenal.exe.manifest
+C:\Program Files\Git\Penal\FK_NewPenal\bin\Release\FK_NewPenal.application
+C:\Program Files\Git\Penal\FK_NewPenal\bin\Release\FK_NewPenal.exe
+C:\Program Files\Git\Penal\FK_NewPenal\bin\Release\FK_NewPenal.pdb
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.blok.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.EditBazaForm.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.Form1.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.Form2.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.Properties.Resources.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.наборы_присадки.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.GenerateResource.Cache
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.application
