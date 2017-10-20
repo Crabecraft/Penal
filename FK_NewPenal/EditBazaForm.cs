@@ -99,6 +99,57 @@ namespace FK_NewPenal
             return System.Convert.ToInt32(Math.Round(float.Parse(value)));
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            groupBox2.Visible = checkBox1.Checked;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            panel2.Enabled = !checkBox2.Checked;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                if (!testTochka(textBox1))
+                {
+                    MessageBox.Show("Некорректное расстояние до паза!"); return;
+                }
+                if (checkBox2.Checked == false)
+                {
+                    if (!testTochka(textBox2))
+                    {
+                        MessageBox.Show("Некорректная длина паза сверху!"); return;
+                    }
+
+                    if (!testTochka(textBox3))
+                    {
+                        MessageBox.Show("Некорректная длина паза снизу!"); return;
+                    }
+
+                }
+            }
+        }
+
+        bool testTochka(TextBox textbox)
+        {
+            try{
+                float temp = float.Parse(textbox.Text.Replace(",","."));
+                return true;
+            }catch{}
+            return false;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == ',' || e.KeyChar == '.')
+                return;
+            else
+                e.Handled = true;
+        }
+
        
     }
 }

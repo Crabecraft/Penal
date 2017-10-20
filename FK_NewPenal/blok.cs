@@ -162,29 +162,29 @@ namespace FK_NewPenal
             // ммToolStripMenuItem
             // 
             this.ммToolStripMenuItem.Name = "ммToolStripMenuItem";
-            this.ммToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.ммToolStripMenuItem.Text = "54 мм.";
+            this.ммToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ммToolStripMenuItem.Text = "МБ 54";
             this.ммToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // ммToolStripMenuItem1
             // 
             this.ммToolStripMenuItem1.Name = "ммToolStripMenuItem1";
-            this.ммToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
-            this.ммToolStripMenuItem1.Text = "86 мм.";
+            this.ммToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ммToolStripMenuItem1.Text = "МБ 86";
             this.ммToolStripMenuItem1.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // ммToolStripMenuItem2
             // 
             this.ммToolStripMenuItem2.Name = "ммToolStripMenuItem2";
-            this.ммToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
-            this.ммToolStripMenuItem2.Text = "118 мм.";
+            this.ммToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.ммToolStripMenuItem2.Text = "МБ 118";
             this.ммToolStripMenuItem2.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // ммToolStripMenuItem3
             // 
             this.ммToolStripMenuItem3.Name = "ммToolStripMenuItem3";
-            this.ммToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
-            this.ммToolStripMenuItem3.Text = "150 мм.";
+            this.ммToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.ммToolStripMenuItem3.Text = "МБ 150";
             this.ммToolStripMenuItem3.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // кВToolStripMenuItem
