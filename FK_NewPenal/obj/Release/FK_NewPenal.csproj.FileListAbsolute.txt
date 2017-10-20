@@ -48,5 +48,5 @@ C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.наборы_пр
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.GenerateResource.Cache
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.application
-C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.FindExcel.resources
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.ResolveComReference.cache
