@@ -92,6 +92,12 @@
     <Compile Include="enums.cs" />
     <Compile Include="Falsh.cs" />
     <Compile Include="fasad.cs" />
+    <Compile Include="FindExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindExcel.Designer.cs">
+      <DependentUpon>FindExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditBazaForm.resx">
       <DependentUpon>EditBazaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindExcel.resx">
+      <DependentUpon>FindExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

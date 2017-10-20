@@ -131,6 +131,10 @@ namespace FK_NewPenal
 
                 }
             }
+
+
+            FindExcel findexcel = new FindExcel();
+            findexcel.ShowDialog();
         }
 
         bool testTochka(TextBox textbox)
@@ -149,6 +153,8 @@ namespace FK_NewPenal
             else
                 e.Handled = true;
         }
+
+        
 
        
     }

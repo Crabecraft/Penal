@@ -49,3 +49,4 @@ C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.GenerateRe
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.application
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
+C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.FindExcel.resources

@@ -1068,11 +1068,15 @@ int minimumWorkingSetSize, int maximumWorkingSetSize );
         public void Form_KeyDown(object o, KeyEventArgs e)
         {
             // Ctrl + X     
+            
             if (e.Control && e.KeyCode == Keys.R)
             {
-                EditBazaForm editbaza = new EditBazaForm(this);
-                editbaza.ShowDialog();
-                e.SuppressKeyPress = true;
+                if (textBox8.Text != "")
+                {
+                    EditBazaForm editbaza = new EditBazaForm(this);
+                    editbaza.ShowDialog();
+                    e.SuppressKeyPress = true;
+                }
             }
         }
 

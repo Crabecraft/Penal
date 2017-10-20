@@ -276,6 +276,7 @@ namespace FK_NewPenal
             this.textBox1.TabIndex = 2;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Visible = false;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox2
             // 
@@ -288,6 +289,7 @@ namespace FK_NewPenal
             this.textBox2.TabIndex = 3;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Visible = false;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // blok
             // 
@@ -311,6 +313,9 @@ namespace FK_NewPenal
         public string[] getPrisadka()
         {
 
+
+
+
             return null;
         }
 
@@ -331,6 +336,14 @@ namespace FK_NewPenal
                 textBox1.Visible = textBox2.Visible = false;
             }
 
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == ',' || e.KeyChar == '.')
+                return;
+            else
+                e.Handled = true;
         }
 
         

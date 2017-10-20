@@ -58,14 +58,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FK_NewPenal.exe" size="135680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FK_NewPenal.exe" size="136704">
       <assemblyIdentity name="FK_NewPenal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+DJNBwFng9byR1XZ3Wt9n1dWcvM=</dsig:DigestValue>
+        <dsig:DigestValue>GTYAy5O33vl3bG6BpTTxzHUzBY8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
