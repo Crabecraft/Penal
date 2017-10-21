@@ -41,12 +41,12 @@ namespace FK_NewPenal
                 int top = getint(y * 0.3f);
                 int height = getint(высота * 0.3f);
 
-                panel1.Controls.Add(new blok(высота,y) { Left = xnul, Top = nullpos - top - height, Width = widthPenal, Height = height, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
+                panel1.Controls.Add(new blok(высота,y) { Left = xnul, Top = nullpos - top - height, Width = widthPenal, Height = height, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
             }
             #endregion
 
-            panel1.Controls.Add(new Panel() { Left = xnul, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
-            panel1.Controls.Add(new Panel() { Left = xnul + widthPenal - 6, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
+            panel1.Controls.Add(new Panel() { Left = xnul, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
+            panel1.Controls.Add(new Panel() { Left = xnul + widthPenal - 6, Top = nullpos - heightPenal, Width = 6, Height = heightPenal, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
 
 
             #region Уровни
@@ -56,7 +56,7 @@ namespace FK_NewPenal
                     float urr = float.Parse(form1.arrUrovni[i].ToString().Replace(",", "."));
                     urovni.Add(urr);
                     int top = getint(urr * 0.3f);
-                    panel1.Controls.Add(new Panel() { Left = xnul + 6, Top = nullpos - top - 3, Width = widthPenal - 12, Height = 6, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });
+                    panel1.Controls.Add(new Panel() { Left = xnul + 6, Top = nullpos - top - 3, Width = widthPenal - 12, Height = 6, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
                 }
             #endregion
 

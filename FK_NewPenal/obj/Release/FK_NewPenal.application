@@ -4,14 +4,14 @@
   <description asmv2:publisher="Microsoft" asmv2:product="FK_NewPenal" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="FK_NewPenal.exe.manifest" size="5820">
+    <dependentAssembly dependencyType="install" codebase="FK_NewPenal.exe.manifest" size="6454">
       <assemblyIdentity name="FK_NewPenal.exe" version="1.0.0.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yCuGcuuR5K780RTV+SvPgo92rsk=</dsig:DigestValue>
+        <dsig:DigestValue>jFqkS6x+j/nR3vrkz/6bn+CAs+g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

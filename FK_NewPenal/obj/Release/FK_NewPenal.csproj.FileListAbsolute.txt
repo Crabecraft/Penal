@@ -50,3 +50,6 @@ C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.exe.manifest
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.application
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.FindExcel.resources
 C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.ResolveComReference.cache
+c:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
+c:\Program Files\Git\Penal\FK_NewPenal\bin\Release\Interop.MSORUNLib.dll
+c:\Program Files\Git\Penal\FK_NewPenal\obj\Release\Interop.MSORUNLib.dll

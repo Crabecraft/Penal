@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Collections;
 
 namespace FK_NewPenal
 {
     public partial class FindExcel : Form
     {
+        ArrayList arrbooks = new ArrayList();
+        Excel.Workbooks books;
+        Excel.Worksheet teksheet;
+
         public FindExcel()
         {
             InitializeComponent();
@@ -20,40 +18,121 @@ namespace FK_NewPenal
 
         void load()
         {
-            var tek = new Excel.Application();
-            System.Diagnostics.Process[] tekProc = System.Diagnostics.Process.GetProcessesByName("EXCEL");
-            //System.Diagnostics.Process[] oldProc = System.Diagnostics.Process.GetProcessesByName("EXCEL");
+            var instance = (Excel.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Excel.Application");
+            books = instance.Workbooks;
+            arrbooks = new ArrayList();
+            listBox1.Items.Clear();
 
-            Excel.Application instance = null;
-            try
+            for (int i = 1; i < books.Count + 1; i++)
             {
-                instance = (Excel.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Excel.Application");
+                
+                Excel.Workbook book = books[i];
+                Excel.Worksheet sheet = null;
+                try
+                {
+                    sheet = (Excel.Worksheet)book.Sheets[10];
+                    if (sheet.Name == "Черновик")
+                    {
+                        listBox1.Items.Add(((Excel.Range)sheet.Cells[1, 2]).Value);
+                        arrbooks.Add(sheet);
+                    }
+                }
+                catch { }
             }
-            catch (Exception ex)
+        }
+
+        private void listBox1_Click(object sender, System.EventArgs e)
+        {
+            if (listBox1.Text != "")
+                loadList2();
+        }
+
+        void loadList2()
+        {
+            listBox2.Items.Clear();
+
+            for (int i = 1; i < books.Count + 1; i++)
             {
-                MessageBox.Show(@"Ошибка выполнения" + ex.Message);
+
+                Excel.Workbook book = books[i];
+                Excel.Worksheet sheet = null;
+                try
+                {
+                    sheet = (Excel.Worksheet)book.Sheets[10];
+                    teksheet = sheet;
+                    if (sheet.Name == "Черновик")
+                    {
+                        string temp = ((Excel.Range)sheet.Cells[1, 2]).Value.ToString();
+                        if (temp == listBox1.Text)
+                        {
+                            
+                            for (int j = 2; j < 1000; j++)
+                            {
+                                string val1 = ((Excel.Range)sheet.Cells[j - 1, 1]).Text.ToString();
+                                string val2 = ((Excel.Range)sheet.Cells[j, 1]).Text.ToString();
+
+
+                                if(val2 != "")
+                                    if (val1 == "")
+                                    {
+                                        listBox2.Items.Add(((Excel.Range)sheet.Cells[j, 6]).Value.ToString());
+                                    }
+
+                                if (val1 == "" && val2 == "")
+                                    return;
+                            }
+                        }
+                    }
+                }
+                catch { }
             }
+        }
 
-            instance = (Excel.Application)System.Runtime.InteropServices.Marshal.GetActiveObject("Excel.Application");
+        private void listBox2_DoubleClick(object sender, System.EventArgs e)
+        {
+            if (listBox2.Text == "") return;
 
-
-            for (int i = 1; i < instance.Workbooks.Count+1; i++)
+            for (int i = 1; i < books.Count + 1; i++)
             {
-                Excel.Workbook books = instance.Workbooks[i];
-                Excel.Worksheet sheet = (Excel.Worksheet)books.Sheets[1];
-                string temp = sheet.Cells[1, 2].ToString();
-                MessageBox.Show(temp);
+
+                Excel.Workbook book = books[i];
+                Excel.Worksheet sheet = null;
+                try
+                {
+                    sheet = (Excel.Worksheet)book.Sheets[10];
+                    teksheet = sheet;
+                    if (sheet.Name == "Черновик")
+                    {
+                        string temp = ((Excel.Range)sheet.Cells[1, 2]).Value.ToString();
+                        if (temp == listBox1.Text)
+                        {
+                            int tekstroka = -1;
+                            for (int j = 2; j < 1000; j++)
+                            {
+                                string val1 = ((Excel.Range)sheet.Cells[j - 1, 1]).Text.ToString();
+                                string val2 = ((Excel.Range)sheet.Cells[j, 1]).Text.ToString();
+
+
+                                if (val2 != "")
+                                    if (val1 == "")
+                                    {
+                                         tekstroka++;
+                                    }
+
+                                if (val1 == "" && val2 == "")
+                                    return;
+
+                                if (tekstroka == listBox2.SelectedIndex)
+                                {
+                                    ((Excel.Range)sheet.Cells[j, 8]).Value = "Ура нахуй";
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch { }
             }
-
-
-            
-            //var tek = (Excel.Application)tekProc[0].get;
-            Excel.Workbooks book = tek.Workbooks;
-            //Excel.Workbook book = books.Open((string)((object[])value)[0]);
-            //Excel.Worksheet sheet = null;
-
-
-
         }
     }
 }
