@@ -1071,13 +1071,20 @@ int minimumWorkingSetSize, int maximumWorkingSetSize );
             
             if (e.Control && e.KeyCode == Keys.R)
             {
-                if (textBox8.Text != "")
+                if (textBox8.Text != "" && checkBox1.Checked && checkBox2.Checked && textBox9.Text != "")
                 {
                     EditBazaForm editbaza = new EditBazaForm(this);
                     editbaza.ShowDialog();
                     e.SuppressKeyPress = true;
                 }
             }
+        }
+
+        public float getGlubina()
+        {
+            if (textBox9.Text != "")
+                return float.Parse(textBox9.Text);
+            return 560;
         }
 
     }

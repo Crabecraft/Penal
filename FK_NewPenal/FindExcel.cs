@@ -9,10 +9,16 @@ namespace FK_NewPenal
         ArrayList arrbooks = new ArrayList();
         Excel.Workbooks books;
         Excel.Worksheet teksheet;
+        bool nashel;
+        string[] левая, правая;
 
-        public FindExcel()
+
+        public FindExcel(string[] левая, string[] правая)
         {
             InitializeComponent();
+            this.левая = левая;
+            this.правая = правая;
+
             load();
         }
 
@@ -124,15 +130,24 @@ namespace FK_NewPenal
 
                                 if (tekstroka == listBox2.SelectedIndex)
                                 {
-                                    ((Excel.Range)sheet.Cells[j, 8]).Value = "Ура нахуй";
-                                    return;
+                                    ((Excel.Range)sheet.Cells[j + 1, 13]).Value = левая[0];
+                                    ((Excel.Range)sheet.Cells[j + 1, 14]).Value = левая[1];
+                                    ((Excel.Range)sheet.Cells[j + 2, 13]).Value = правая[0];
+                                    ((Excel.Range)sheet.Cells[j + 2, 14]).Value = правая[1];
+                                    nashel = true;
+                                    break;
                                 }
                             }
+
+                            break;
                         }
                     }
                 }
                 catch { }
+                
+                
             }
+             if (nashel) this.Close();
         }
     }
 }

@@ -76,6 +76,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,6 +104,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label12);
@@ -427,7 +431,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(288, 10);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(61, 34);
+            this.button3.Size = new System.Drawing.Size(61, 20);
             this.button3.TabIndex = 18;
             this.button3.Text = "Печать";
             this.button3.UseVisualStyleBackColor = true;
@@ -435,9 +439,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 43);
+            this.button2.Location = new System.Drawing.Point(3, 42);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(47, 23);
             this.button2.TabIndex = 17;
             this.button2.Text = "тест";
             this.button2.UseVisualStyleBackColor = true;
@@ -546,7 +550,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 32);
+            this.label2.Location = new System.Drawing.Point(159, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 4;
@@ -554,7 +558,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(183, 45);
+            this.textBox2.Location = new System.Drawing.Point(149, 45);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(73, 20);
             this.textBox2.TabIndex = 3;
@@ -565,7 +569,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 32);
+            this.label1.Location = new System.Drawing.Point(80, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 2;
@@ -573,7 +577,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 45);
+            this.textBox1.Location = new System.Drawing.Point(64, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(79, 20);
             this.textBox1.TabIndex = 1;
@@ -609,6 +613,24 @@
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(238, 32);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Глубина";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(228, 45);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(73, 20);
+            this.textBox9.TabIndex = 32;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Form1
             // 
@@ -688,6 +710,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox textBox9;
     }
 }
 

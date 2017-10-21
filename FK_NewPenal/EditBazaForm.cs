@@ -133,8 +133,123 @@ namespace FK_NewPenal
             }
 
 
-            FindExcel findexcel = new FindExcel();
+            FindExcel findexcel = new FindExcel(getLeftPanel(), getRightPanel());
             findexcel.ShowDialog();
+        }
+
+        string[] getLeftPanel()
+        {
+            string progstr = "Контур;";
+
+            if (polki.Count > 0)
+            {
+                progstr += "Полка$FX=";
+
+                for (int i = 0; i < polki.Count; i++)
+                {
+                    string ur = polki[i].ToString();
+                    progstr += "lpx-" + ur;
+                    if (i != polki.Count - 1) progstr += "_";
+                    else progstr += ";";
+                }
+            }
+
+            if (urovni.Count > 0)
+            {
+
+                if (radioButton3.Checked)
+                {
+                    if (form1.getGlubina() < 450)
+                       progstr += "щит2$FX=";
+                    else
+                       progstr += "щит3$FX=";
+                }
+                else if (radioButton4.Checked)
+                {
+                    if (form1.getGlubina() < 450)
+                        progstr += "щит2паз$FX=";
+                    else
+                        progstr += "щит3паз$FX=";
+                }
+                
+
+                for (int i = 0; i < urovni.Count; i++)
+                {
+                    string ur = urovni[i].ToString();
+                    progstr += "lpx-" + ur;
+                    if (i != urovni.Count - 1) progstr += "_";
+                    else progstr += ";";
+                }
+            }
+
+
+
+
+
+                if (checkBox1.Checked && float.Parse(textBox1.Text) > 0)
+                {
+                    progstr += "Паз";
+                }
+
+
+            string paramstr = "$storona=2;$paz=" + textBox1.Text + ";$Xpaz1=0;$Xpaz2=" + form1.getHpenal().ToString() + ";";
+
+            return new string[] { progstr, paramstr };
+        }
+
+        string[] getRightPanel()
+        {
+            string progstr = "Контур;";
+
+            if (polki.Count > 0)
+            {   
+                progstr += "Полка$FX=";
+
+                for (int i = 0; i < polki.Count; i++)
+                {
+                    string ur = polki[i].ToString();
+                    progstr += "lpx-" + ur;
+                    if (i != polki.Count - 1) progstr += "_";
+                    else progstr += ";";
+                }
+            }
+
+            if (urovni.Count > 0)
+            {
+
+                if (radioButton3.Checked)
+                {
+                    if (form1.getGlubina() < 450)
+                        progstr += "щит2$FX=";
+                    else
+                        progstr += "щит3$FX=";
+                }
+                else if (radioButton4.Checked)
+                {
+                    if (form1.getGlubina() < 450)
+                        progstr += "щит2паз$FX=";
+                    else
+                        progstr += "щит3паз$FX=";
+                }
+
+
+                for (int i = 0; i < urovni.Count; i++)
+                {
+                    string ur = urovni[i].ToString();
+                    progstr += "lpx-" + ur;
+                    if (i != urovni.Count - 1) progstr += "_";
+                    else progstr += ";";
+                }
+            }
+
+            if (checkBox1.Checked && float.Parse(textBox1.Text) > 0)
+            {
+                progstr += "Паз";
+            }
+
+            string paramstr = "$storona=3;$paz=" + textBox1.Text + ";$Xpaz1=0;$Xpaz2=" + form1.getHpenal().ToString() + ";";
+
+            return new string[] { progstr, paramstr };
         }
 
         bool testTochka(TextBox textbox)
