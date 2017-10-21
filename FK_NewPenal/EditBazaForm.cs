@@ -76,7 +76,7 @@ namespace FK_NewPenal
                             float urovenL = urovenR;
                             polki.Add(urovenR);
                             int top = getint(urovenR * 0.3f);
-                            panel1.Controls.Add(new Panel() { Left = xnul + 7, Top = nullpos - top - 6, Width = widthPenal - 14, Height = 6, BackColor = System.Drawing.SystemColors.GradientInactiveCaption, BorderStyle = BorderStyle.FixedSingle });  
+                            panel1.Controls.Add(new Panel() { Left = xnul + 7, Top = nullpos - top - 6, Width = widthPenal - 14, Height = 6, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });  
                         }
                         catch { }
 
@@ -132,8 +132,17 @@ namespace FK_NewPenal
                 }
             }
 
+            if (!проверка_фасадов()) return;
 
-            FindExcel findexcel = new FindExcel(getLeftPanel(), getRightPanel());
+            string[] left = getLeftPanel();
+            string[] right = getRightPanel();
+            string[] tempFasadi = getFasadi();
+
+            left[0] += tempFasadi[0];
+            right[0] += tempFasadi[1];
+            
+
+            FindExcel findexcel = new FindExcel(left, right);
             findexcel.ShowDialog();
         }
 
@@ -188,11 +197,28 @@ namespace FK_NewPenal
 
                 if (checkBox1.Checked && float.Parse(textBox1.Text) > 0)
                 {
-                    progstr += "Паз";
+                    if(checkBox2.Checked)
+                    progstr += "Паз;";
+                    else
+                    if (!checkBox2.Checked)
+                    {
+                        float паз1 = float.Parse(textBox2.Text);
+                        float паз2 = float.Parse(textBox3.Text);
+
+                        if (паз1 > 0)
+                        {
+                            progstr += "Паз1$FX=" + textBox2.Text.Replace(",",".") +";";
+                        }
+                        if (паз2 > 0)
+                        {
+                            progstr += "Паз2$FX=" + textBox3.Text.Replace(",", ".") + ";";
+                        }
+                    }
                 }
 
-
-            string paramstr = "$storona=2;$paz=" + textBox1.Text + ";$Xpaz1=0;$Xpaz2=" + form1.getHpenal().ToString() + ";";
+            string paz = textBox1.Text;
+            if (!checkBox1.Checked) paz = "0";
+            string paramstr = "$storona=2;$paz=" + paz + ";$Xpaz1=0;$Xpaz2=" + form1.getHpenal().ToString() + ";";
 
             return new string[] { progstr, paramstr };
         }
@@ -244,12 +270,168 @@ namespace FK_NewPenal
 
             if (checkBox1.Checked && float.Parse(textBox1.Text) > 0)
             {
-                progstr += "Паз";
+                if (checkBox2.Checked)
+                    progstr += "Паз;";
+                else
+                    if (!checkBox2.Checked)
+                    {
+                        float паз1 = float.Parse(textBox3.Text);
+                        float паз2 = float.Parse(textBox2.Text);
+
+                        if (паз1 > 0)
+                        {
+                            progstr += "Паз1$FX=" + textBox3.Text.Replace(",", ".") + ";";
+                        }
+                        if (паз2 > 0)
+                        {
+                            progstr += "Паз2$FX=" + textBox2.Text.Replace(",", ".") + ";";
+                        }
+                    }
             }
 
-            string paramstr = "$storona=3;$paz=" + textBox1.Text + ";$Xpaz1=0;$Xpaz2=" + form1.getHpenal().ToString() + ";";
+            string paz = textBox1.Text;
+            if (!checkBox1.Checked) paz = "0";
+            string paramstr = "$storona=3;$paz=" + paz + ";$Xpaz1=0;$Xpaz2=" + form1.getHpenal().ToString() + ";";
 
             return new string[] { progstr, paramstr };
+        }
+
+        string[] getFasadi()
+        {
+            string[] returmMass = new string[2];
+
+            for (int i = 0; i < this.panel1.Controls.Count; i++)
+                if (this.panel1.Controls[i] is blok)
+                {
+                    blok tekFasad = (blok)this.panel1.Controls[i];
+                    string name = tekFasad.label1.Text;
+                    if (name == "Без крепления") continue;
+
+                    float петляВерх = float.Parse(textBox1.Text);
+                    float петляЦентр = float.Parse(textBox3.Text);
+                    float петляНиз = float.Parse(textBox2.Text);
+
+
+                    string ret = "";
+                    if (name.Contains("Левый") || name.Contains("Правый"))
+                    {
+                            if (петляВерх > 0)
+                                ret += "Петля_ТИП_ПЕТЛИ$FX=" + (tekFasad.уровень + (tekFasad.высота - петляВерх)) + ";";
+
+                            if(петляНиз > 0)
+                                ret += "Петля_ТИП_ПЕТЛИ$FX=" + (tekFasad.уровень + петляНиз) + ";";
+
+                            if(tekFasad.высота > 1000 && петляЦентр > 0)
+                                ret += "Петля_ТИП_ПЕТЛИ$FX=" + (tekFasad.уровень + петляЦентр) + ";";
+                    }
+
+                    switch (name)
+                    {
+                        case "Левый":
+                            returmMass[0] += ret;      
+                        break;
+
+                        case "Правый":
+                            returmMass[1] += ret;
+                        break;
+
+                        case "Правый+Левый":
+                            returmMass[0] += ret;
+                            returmMass[1] += ret;
+                        break;
+
+                        case "ТБ":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        break;
+
+                        case "ТБ С1":
+                        if (tekFasad.высота - 40 < 115)
+                        {
+                            returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 35.5f).ToString() + ";";
+                            returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 35.5f).ToString() + ";";
+                        }
+                        else
+                        {
+                            returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                            returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        }
+                        break;
+
+                        case "КВ":
+                          returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                          returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        break;
+
+                        case "Шарики":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        break;
+
+                        case "МБ 54":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 70).ToString() + "_" + (tekFasad.уровень + 38).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 70).ToString() + "_" + (tekFasad.уровень + 38).ToString() + ";";
+                        break;
+
+                        case "МБ 86":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 102).ToString() + "_" + (tekFasad.уровень + 38).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 102).ToString() + "_" + (tekFasad.уровень + 38).ToString() + ";";
+                        break;
+
+                        case "МБ 118":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 134).ToString() + "_" + (tekFasad.уровень + 38).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 134).ToString() + "_" + (tekFasad.уровень + 38).ToString() + ";";
+                        break;
+
+                        case "МБ 150":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 176).ToString() + "_" + (tekFasad.уровень + 48).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 176).ToString() + "_" + (tekFasad.уровень + 48).ToString() + ";";
+                        break;
+
+                        case "Газ-лифт":
+                        returmMass[0] += "газлифты$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() +";";
+                        returmMass[1] += "газлифты$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        break;
+
+                        case "Клок":
+                        returmMass[0] += "клок$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        returmMass[1] += "клок$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        break;
+
+                        case "HK-XS":
+                        returmMass[0] += "hk-xs$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        returmMass[1] += "hk-xs$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        break;
+
+                        case "HK-S":
+                        returmMass[0] += "hk-s$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        returmMass[1] += "hk-s$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        break;
+
+                        case "HK":
+                        returmMass[0] += "hk$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        returmMass[1] += "hk$FX=lpx-" + (tekFasad.уровень + tekFasad.высота + 2).ToString() + ";";
+                        break;
+                            //(lpx * 0.3) - 57
+                        case "HF":
+                            float hf = tekFasad.высота - ((tekFasad.высота+4)*2 * 0.3f-59);
+                            returmMass[0] += "HFFX$FX=lpx-" + (tekFasad.уровень + hf).ToString() + ";";
+                            returmMass[1] += "HFFX$FX=lpx-" + (tekFasad.уровень + hf).ToString() + ";";
+                        break;
+                    }
+
+                    if (radioButton1.Checked)
+                    {
+                        returmMass[0] = returmMass[0].Replace("ТИП_ПЕТЛИ", "ЕВРОВИНТ");
+                        returmMass[1] = returmMass[1].Replace("ТИП_ПЕТЛИ", "ЕВРОВИНТ");
+                    }else
+                    if (radioButton2.Checked)
+                    {
+                        returmMass[0] = returmMass[0].Replace("ТИП_ПЕТЛИ", "САМОРЕЗ");
+                        returmMass[1] = returmMass[1].Replace("ТИП_ПЕТЛИ", "САМОРЕЗ");
+                    }
+                }
+                return returmMass;
         }
 
         bool testTochka(TextBox textbox)
@@ -269,7 +451,37 @@ namespace FK_NewPenal
                 e.Handled = true;
         }
 
-        
+        bool проверка_фасадов()
+        {
+            for (int i = 0; i < this.panel1.Controls.Count; i++)
+                if (this.panel1.Controls[i] is blok)
+                {
+                    blok tempBlok = (blok)this.panel1.Controls[i];
+                    if (tempBlok.label1.Text == "")
+                    {
+                        MessageBox.Show("Фасад: " + tempBlok.высота + "х" + (form1.getWpenal() - 4).ToString() + "- не настроен!");
+                        return false;
+                    }
+
+
+                    if (tempBlok.label1.Text == "Правый" || tempBlok.label1.Text == "Левый" || tempBlok.label1.Text == "Правый+Левый")
+                    {
+                        if (tempBlok.textBox1.Text == "" || tempBlok.textBox2.Text == "")
+                        {
+                            MessageBox.Show("Фасад: " + tempBlok.высота + "х" + (form1.getWpenal() - 4).ToString() + "- укажите расстояние до петли!");
+                            return false;
+                        }
+
+                        if (tempBlok.высота > 1000 && tempBlok.textBox3.Text == "")
+                        {
+                            MessageBox.Show("Фасад: " + tempBlok.высота + "х" + (form1.getWpenal() - 4).ToString() + "- укажите расстояние до средней петли!");
+                            return false;
+                        }
+                    }
+                }
+            return true;
+        }
+
 
        
     }

@@ -32,12 +32,14 @@ namespace FK_NewPenal
         private ToolStripMenuItem ммToolStripMenuItem2;
         private ToolStripMenuItem ммToolStripMenuItem3;
         private ToolStripMenuItem hFToolStripMenuItem;
+        public TextBox textBox1;
+        public TextBox textBox2;
+        public TextBox textBox3;
+        private ToolStripMenuItem тБС1ToolStripMenuItem;
+        public Label label1;
         #endregion
 
-        float высота, уровень;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label label1;
+        public float высота,уровень;       
     
         public blok(float высота, float уровень)
         {
@@ -64,6 +66,7 @@ namespace FK_NewPenal
             this.ммToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.кВToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.шарикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.тБС1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подьемникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.газлифтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +77,7 @@ namespace FK_NewPenal
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +90,7 @@ namespace FK_NewPenal
             this.подьемникиToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 92);
             this.contextMenuStrip1.Text = "Фасад";
             // 
             // фальшToolStripMenuItem
@@ -103,7 +107,7 @@ namespace FK_NewPenal
             this.левыйToolStripMenuItem,
             this.правыйЛевыйToolStripMenuItem});
             this.распошнойToolStripMenuItem.Name = "распошнойToolStripMenuItem";
-            this.распошнойToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.распошнойToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.распошнойToolStripMenuItem.Text = "Распашной";
             // 
             // правыйToolStripMenuItem
@@ -136,9 +140,10 @@ namespace FK_NewPenal
             this.тБToolStripMenuItem,
             this.мБToolStripMenuItem,
             this.кВToolStripMenuItem,
-            this.шарикиToolStripMenuItem});
+            this.шарикиToolStripMenuItem,
+            this.тБС1ToolStripMenuItem});
             this.шуфлядаToolStripMenuItem.Name = "шуфлядаToolStripMenuItem";
-            this.шуфлядаToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.шуфлядаToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.шуфлядаToolStripMenuItem.Text = "Выдвижной";
             // 
             // тБToolStripMenuItem
@@ -201,6 +206,13 @@ namespace FK_NewPenal
             this.шарикиToolStripMenuItem.Text = "Шарики";
             this.шарикиToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
+            // тБС1ToolStripMenuItem
+            // 
+            this.тБС1ToolStripMenuItem.Name = "тБС1ToolStripMenuItem";
+            this.тБС1ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.тБС1ToolStripMenuItem.Text = "ТБ С1";
+            this.тБС1ToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
+            // 
             // подьемникиToolStripMenuItem
             // 
             this.подьемникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -211,7 +223,7 @@ namespace FK_NewPenal
             this.hKToolStripMenuItem,
             this.hFToolStripMenuItem});
             this.подьемникиToolStripMenuItem.Name = "подьемникиToolStripMenuItem";
-            this.подьемникиToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.подьемникиToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.подьемникиToolStripMenuItem.Text = "Подьемник";
             // 
             // газлифтToolStripMenuItem
@@ -291,12 +303,24 @@ namespace FK_NewPenal
             this.textBox2.Visible = false;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(55, 91);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(80, 23);
+            this.textBox3.TabIndex = 4;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.Visible = false;
+            // 
             // blok
             // 
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.BackColor = System.Drawing.Color.Linen;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -304,6 +328,8 @@ namespace FK_NewPenal
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "blok";
             this.Size = new System.Drawing.Size(188, 166);
+            this.MouseLeave += new System.EventHandler(this.blok_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.blok_MouseMove);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -330,10 +356,16 @@ namespace FK_NewPenal
             if (temp.AccessibleName == "PETLI")
             {
                 textBox1.Visible = textBox2.Visible = true;
+
+                if (высота > 1000)
+                {
+                    textBox3.Visible = true;
+                    textBox3.Text = (высота / 2).ToString();
+                }
             }
             else
             {
-                textBox1.Visible = textBox2.Visible = false;
+                textBox1.Visible = textBox2.Visible = textBox3.Visible = false;
             }
 
         }
@@ -345,6 +377,17 @@ namespace FK_NewPenal
             else
                 e.Handled = true;
         }
+
+        private void blok_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.BackColor = System.Drawing.Color.Bisque;
+        }
+
+        private void blok_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = System.Drawing.Color.Linen;
+        }
+
 
         
      
