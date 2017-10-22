@@ -41,7 +41,7 @@ namespace FK_NewPenal
                 int top = getint(y * 0.3f);
                 int height = getint(высота * 0.3f);
 
-                panel1.Controls.Add(new blok(высота,y) { Left = xnul, Top = nullpos - top - height, Width = widthPenal, Height = height, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
+                panel1.Controls.Add(new blok(высота,y) { Left = xnul+1, Top = nullpos - top - height, Width = widthPenal-2, Height = height, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
             }
             #endregion
 
