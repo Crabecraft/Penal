@@ -30,6 +30,8 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -138,6 +138,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 688);
             this.panel1.TabIndex = 0;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(238, 32);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Глубина";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(228, 45);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(73, 20);
+            this.textBox9.TabIndex = 32;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label11
             // 
@@ -435,6 +453,7 @@
             this.button3.TabIndex = 18;
             this.button3.Text = "Печать";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
@@ -445,6 +464,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "тест";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label7
@@ -613,24 +633,6 @@
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(238, 32);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 13);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Глубина";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(228, 45);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(73, 20);
-            this.textBox9.TabIndex = 32;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Form1
             // 

@@ -73,14 +73,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FK_NewPenal.exe" size="146432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FK_NewPenal.exe" size="148992">
       <assemblyIdentity name="FK_NewPenal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>b+0i+9IO38EMJFsiWKhULkMCu08=</dsig:DigestValue>
+        <dsig:DigestValue>8uCREk+sigMekhdQjyGP1zhZUHU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -92,7 +92,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>3U27g/67wBnQu8zQbK3ECjilOYs=</dsig:DigestValue>
+        <dsig:DigestValue>lL6VoUW6r44/poYhiKhTSI0PotA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

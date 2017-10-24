@@ -8,6 +8,7 @@ using System.Threading;
 using System.Drawing.Printing;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Windows.Forms;
 using Microsoft.Win32;
 namespace FK_NewPenal
 {

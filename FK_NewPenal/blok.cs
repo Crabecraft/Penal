@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace FK_NewPenal
 {
@@ -39,13 +40,79 @@ namespace FK_NewPenal
         public Label label1;
         #endregion
 
-        public float высота,уровень;       
+        public float высота,уровень;
+        private Timer timer1;       
     
         public blok(float высота, float уровень)
         {
             InitializeComponent();
             this.высота = высота;
             this.уровень = уровень;
+        }
+
+        public void drawPolki()
+        {
+            Pen pen = new Pen(Brushes.Red, 1);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            Graphics gr = this.CreateGraphics();
+
+            for(int i=0; i < this.Parent.Controls.Count;i++)
+            {
+                if(this.Parent.Controls[i] is Panel)
+                    if(((Panel)this.Parent.Controls[i]).AccessibleName == "полки")
+                    {
+                        Panel tempPolka = (Panel)this.Parent.Controls[i];
+                        if (tempPolka.Top > this.Top && tempPolka.Top < this.Top + this.Height || tempPolka.Top+tempPolka.Height > this.Top && tempPolka.Top+tempPolka.Height < this.Top + this.Height)
+                        {
+                           gr.DrawRectangle(pen, new Rectangle(new Point(tempPolka.Left-this.Left-2,tempPolka.Top-this.Top), new Size(tempPolka.Width, tempPolka.Height)));
+                        }
+                    }
+            }
+        }
+
+        public void drawPetli()
+        {
+            Pen pen = new Pen(Brushes.Red, 1);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            Graphics gr = this.CreateGraphics();
+
+            if (textBox1.Visible)
+                if (textBox1.Text != "0" && textBox1.Text != "")
+                {
+                    int x = (int)Math.Round((float.Parse(textBox1.Text) - 16) * 0.3f);
+
+                    if (label1.Text.Contains("Правый"))
+                        gr.DrawEllipse(pen, new Rectangle(new Point(this.Width - 15, x), new Size(11, 11)));
+                    if (label1.Text.Contains("Левый"))
+                        gr.DrawEllipse(pen, new Rectangle(new Point(2, x), new Size(11, 11)));
+                }
+                else { gr.Clear(System.Drawing.Color.Linen); }
+
+            if (textBox2.Visible)
+                if (textBox2.Text != "0" && textBox2.Text != "")
+                {
+                    int x = (int)Math.Round(высота*0.3f-(float.Parse(textBox2.Text) + 32) * 0.3f);
+
+                    if (label1.Text.Contains("Правый"))
+                        gr.DrawEllipse(pen, new Rectangle(new Point(this.Width - 15, x), new Size(11, 11)));
+                    if (label1.Text.Contains("Левый"))
+                        gr.DrawEllipse(pen, new Rectangle(new Point(2, x), new Size(11, 11)));
+                }
+                else { gr.Clear(System.Drawing.Color.Linen); }
+
+            if (textBox3.Visible)
+                if (textBox3.Text != "0" && textBox3.Text != "")
+                {
+                    int x = (int)Math.Round(высота * 0.3f - (float.Parse(textBox3.Text) + 32) * 0.3f);
+
+                    if (label1.Text.Contains("Правый"))
+                        gr.DrawEllipse(pen, new Rectangle(new Point(this.Width - 15, x), new Size(11, 11)));
+                    if (label1.Text.Contains("Левый"))
+                        gr.DrawEllipse(pen, new Rectangle(new Point(2, x), new Size(11, 11)));
+                }
+                else { gr.Clear(System.Drawing.Color.Linen); }
+        
+        
         }
     
         private void InitializeComponent()
@@ -78,6 +145,7 @@ namespace FK_NewPenal
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,13 +158,13 @@ namespace FK_NewPenal
             this.подьемникиToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 92);
             this.contextMenuStrip1.Text = "Фасад";
             // 
             // фальшToolStripMenuItem
             // 
             this.фальшToolStripMenuItem.Name = "фальшToolStripMenuItem";
-            this.фальшToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.фальшToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.фальшToolStripMenuItem.Text = "Без крепления";
             this.фальшToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -107,14 +175,14 @@ namespace FK_NewPenal
             this.левыйToolStripMenuItem,
             this.правыйЛевыйToolStripMenuItem});
             this.распошнойToolStripMenuItem.Name = "распошнойToolStripMenuItem";
-            this.распошнойToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.распошнойToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.распошнойToolStripMenuItem.Text = "Распашной";
             // 
             // правыйToolStripMenuItem
             // 
             this.правыйToolStripMenuItem.AccessibleName = "PETLI";
             this.правыйToolStripMenuItem.Name = "правыйToolStripMenuItem";
-            this.правыйToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.правыйToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.правыйToolStripMenuItem.Text = "Правый";
             this.правыйToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -122,7 +190,7 @@ namespace FK_NewPenal
             // 
             this.левыйToolStripMenuItem.AccessibleName = "PETLI";
             this.левыйToolStripMenuItem.Name = "левыйToolStripMenuItem";
-            this.левыйToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.левыйToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.левыйToolStripMenuItem.Text = "Левый";
             this.левыйToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -130,7 +198,7 @@ namespace FK_NewPenal
             // 
             this.правыйЛевыйToolStripMenuItem.AccessibleName = "PETLI";
             this.правыйЛевыйToolStripMenuItem.Name = "правыйЛевыйToolStripMenuItem";
-            this.правыйЛевыйToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.правыйЛевыйToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.правыйЛевыйToolStripMenuItem.Text = "Правый+Левый";
             this.правыйЛевыйToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -143,7 +211,7 @@ namespace FK_NewPenal
             this.шарикиToolStripMenuItem,
             this.тБС1ToolStripMenuItem});
             this.шуфлядаToolStripMenuItem.Name = "шуфлядаToolStripMenuItem";
-            this.шуфлядаToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.шуфлядаToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.шуфлядаToolStripMenuItem.Text = "Выдвижной";
             // 
             // тБToolStripMenuItem
@@ -167,28 +235,28 @@ namespace FK_NewPenal
             // ммToolStripMenuItem
             // 
             this.ммToolStripMenuItem.Name = "ммToolStripMenuItem";
-            this.ммToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.ммToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.ммToolStripMenuItem.Text = "МБ 54";
             this.ммToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // ммToolStripMenuItem1
             // 
             this.ммToolStripMenuItem1.Name = "ммToolStripMenuItem1";
-            this.ммToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.ммToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.ммToolStripMenuItem1.Text = "МБ 86";
             this.ммToolStripMenuItem1.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // ммToolStripMenuItem2
             // 
             this.ммToolStripMenuItem2.Name = "ммToolStripMenuItem2";
-            this.ммToolStripMenuItem2.Size = new System.Drawing.Size(111, 22);
+            this.ммToolStripMenuItem2.Size = new System.Drawing.Size(113, 22);
             this.ммToolStripMenuItem2.Text = "МБ 118";
             this.ммToolStripMenuItem2.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // ммToolStripMenuItem3
             // 
             this.ммToolStripMenuItem3.Name = "ммToolStripMenuItem3";
-            this.ммToolStripMenuItem3.Size = new System.Drawing.Size(111, 22);
+            this.ммToolStripMenuItem3.Size = new System.Drawing.Size(113, 22);
             this.ммToolStripMenuItem3.Text = "МБ 150";
             this.ммToolStripMenuItem3.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -223,48 +291,48 @@ namespace FK_NewPenal
             this.hKToolStripMenuItem,
             this.hFToolStripMenuItem});
             this.подьемникиToolStripMenuItem.Name = "подьемникиToolStripMenuItem";
-            this.подьемникиToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.подьемникиToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.подьемникиToolStripMenuItem.Text = "Подьемник";
             // 
             // газлифтToolStripMenuItem
             // 
             this.газлифтToolStripMenuItem.Name = "газлифтToolStripMenuItem";
-            this.газлифтToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.газлифтToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.газлифтToolStripMenuItem.Text = "Газ-лифт";
             this.газлифтToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // клокToolStripMenuItem
             // 
             this.клокToolStripMenuItem.Name = "клокToolStripMenuItem";
-            this.клокToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.клокToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.клокToolStripMenuItem.Text = "Клок";
             this.клокToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // hKXSToolStripMenuItem
             // 
             this.hKXSToolStripMenuItem.Name = "hKXSToolStripMenuItem";
-            this.hKXSToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.hKXSToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.hKXSToolStripMenuItem.Text = "HK-XS";
             this.hKXSToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // hKSToolStripMenuItem
             // 
             this.hKSToolStripMenuItem.Name = "hKSToolStripMenuItem";
-            this.hKSToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.hKSToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.hKSToolStripMenuItem.Text = "HK-S";
             this.hKSToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // hKToolStripMenuItem
             // 
             this.hKToolStripMenuItem.Name = "hKToolStripMenuItem";
-            this.hKToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.hKToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.hKToolStripMenuItem.Text = "HK";
             this.hKToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // hFToolStripMenuItem
             // 
             this.hFToolStripMenuItem.Name = "hFToolStripMenuItem";
-            this.hFToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.hFToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.hFToolStripMenuItem.Text = "HF";
             this.hFToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -313,6 +381,12 @@ namespace FK_NewPenal
             this.textBox3.TabIndex = 4;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // blok
             // 
@@ -386,6 +460,12 @@ namespace FK_NewPenal
         private void blok_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = System.Drawing.Color.Linen;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            drawPolki();
+            drawPetli();
         }
 
 

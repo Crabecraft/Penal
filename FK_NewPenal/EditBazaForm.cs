@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using SuperSrting;
+using System.Drawing;
 using System.Collections;
 
 namespace FK_NewPenal
@@ -20,7 +21,9 @@ namespace FK_NewPenal
         }
 
         void load(){
-        
+
+
+
             polki = new ArrayList();
             urovni = new ArrayList();
             int heightPenal = getint(form1.getHpenal() * 0.3f);
@@ -76,7 +79,7 @@ namespace FK_NewPenal
                             float urovenL = urovenR;
                             polki.Add(urovenR);
                             int top = getint(urovenR * 0.3f);
-                            panel1.Controls.Add(new Panel() { Left = xnul + 7, Top = nullpos - top - 6, Width = widthPenal - 14, Height = 6, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });  
+                            panel1.Controls.Add(new Panel() { Left = xnul + 7, Top = nullpos - top - 6, Width = widthPenal - 14, Height = 6, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle, AccessibleName = "полки" });  
                         }
                         catch { }
 
@@ -85,7 +88,6 @@ namespace FK_NewPenal
             }
             catch { }
             #endregion
-
 
         }
 
@@ -481,6 +483,45 @@ namespace FK_NewPenal
                 }
             return true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            
+            //gr.Dispose();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            Pen pen = new Pen(Brushes.Red, 1);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+
+            for (int i = 0; i < this.panel1.Controls.Count; i++)
+            {
+                if (this.panel1.Controls[i] is blok)
+                {
+                    blok TEMPfAS = (blok)this.panel1.Controls[i];   
+                    for (int j = 0; j < this.panel1.Controls.Count; j++)
+                    {
+                        if(this.panel1.Controls[j] is Panel)
+                            if(((Panel)this.panel1.Controls[j]).AccessibleName == "полки")
+                            {
+                                Panel tempPanel = (Panel)this.panel1.Controls[j];
+                                if(tempPanel.Top > TEMPfAS.Top)
+                                    if (tempPanel.Top < TEMPfAS.Top + TEMPfAS.Height)
+                                    {
+                                        Graphics gr = TEMPfAS.CreateGraphics();
+                                        gr.DrawRectangle(pen, new Rectangle(new Point(this.Left-this.Width/2 + tempPanel.Left,this.Top+ tempPanel.Top), new Size(tempPanel.Width, tempPanel.Height)));
+
+
+                                    }
+                            }
+                    }
+                }
+            }
+        }
+
 
 
        
