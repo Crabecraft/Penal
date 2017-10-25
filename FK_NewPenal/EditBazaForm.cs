@@ -311,14 +311,22 @@ namespace FK_NewPenal
                     string name = tekFasad.label1.Text;
                     if (name == "Без крепления") continue;
 
-                    float петляВерх = float.Parse(textBox1.Text);
-                    float петляЦентр = float.Parse(textBox3.Text);
-                    float петляНиз = float.Parse(textBox2.Text);
+                    
 
 
                     string ret = "";
                     if (name.Contains("Левый") || name.Contains("Правый"))
                     {
+                           float петляЦентр = 0;
+                           float петляВерх = float.Parse(tekFasad.textBox1.Text);
+                           try
+                           {
+                              петляЦентр = float.Parse(tekFasad.textBox3.Text);
+                           }
+                           catch { }
+                           float петляНиз = float.Parse(tekFasad.textBox2.Text);
+
+
                             if (петляВерх > 0)
                                 ret += "Петля_ТИП_ПЕТЛИ$FX=" + (tekFasad.уровень + (tekFasad.высота - петляВерх)) + ";";
 
