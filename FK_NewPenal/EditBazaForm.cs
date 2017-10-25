@@ -301,6 +301,8 @@ namespace FK_NewPenal
         string[] getFasadi()
         {
             string[] returmMass = new string[2];
+            returmMass[0] = "";
+            returmMass[1] = "";
 
             for (int i = 0; i < this.panel1.Controls.Count; i++)
                 if (this.panel1.Controls[i] is blok)
