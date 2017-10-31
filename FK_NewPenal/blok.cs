@@ -41,6 +41,7 @@ namespace FK_NewPenal
         #endregion
 
         public float высота,уровень;
+        private ToolStripMenuItem hettichToolStripMenuItem;
         private Timer timer1;       
     
         public blok(float высота, float уровень)
@@ -146,6 +147,7 @@ namespace FK_NewPenal
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.hettichToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,7 +160,7 @@ namespace FK_NewPenal
             this.подьемникиToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 114);
             this.contextMenuStrip1.Text = "Фасад";
             // 
             // фальшToolStripMenuItem
@@ -209,7 +211,8 @@ namespace FK_NewPenal
             this.мБToolStripMenuItem,
             this.кВToolStripMenuItem,
             this.шарикиToolStripMenuItem,
-            this.тБС1ToolStripMenuItem});
+            this.тБС1ToolStripMenuItem,
+            this.hettichToolStripMenuItem});
             this.шуфлядаToolStripMenuItem.Name = "шуфлядаToolStripMenuItem";
             this.шуфлядаToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.шуфлядаToolStripMenuItem.Text = "Выдвижной";
@@ -217,7 +220,7 @@ namespace FK_NewPenal
             // тБToolStripMenuItem
             // 
             this.тБToolStripMenuItem.Name = "тБToolStripMenuItem";
-            this.тБToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.тБToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.тБToolStripMenuItem.Text = "ТБ";
             this.тБToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -229,7 +232,7 @@ namespace FK_NewPenal
             this.ммToolStripMenuItem2,
             this.ммToolStripMenuItem3});
             this.мБToolStripMenuItem.Name = "мБToolStripMenuItem";
-            this.мБToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.мБToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.мБToolStripMenuItem.Text = "МБ";
             // 
             // ммToolStripMenuItem
@@ -263,21 +266,21 @@ namespace FK_NewPenal
             // кВToolStripMenuItem
             // 
             this.кВToolStripMenuItem.Name = "кВToolStripMenuItem";
-            this.кВToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.кВToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.кВToolStripMenuItem.Text = "КВ";
             this.кВToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // шарикиToolStripMenuItem
             // 
             this.шарикиToolStripMenuItem.Name = "шарикиToolStripMenuItem";
-            this.шарикиToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.шарикиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.шарикиToolStripMenuItem.Text = "Шарики";
             this.шарикиToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
             // тБС1ToolStripMenuItem
             // 
             this.тБС1ToolStripMenuItem.Name = "тБС1ToolStripMenuItem";
-            this.тБС1ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.тБС1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.тБС1ToolStripMenuItem.Text = "ТБ С1";
             this.тБС1ToolStripMenuItem.Click += new System.EventHandler(this.правыйToolStripMenuItem_Click);
             // 
@@ -387,6 +390,12 @@ namespace FK_NewPenal
             this.timer1.Enabled = true;
             this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // hettichToolStripMenuItem
+            // 
+            this.hettichToolStripMenuItem.Name = "hettichToolStripMenuItem";
+            this.hettichToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hettichToolStripMenuItem.Text = "Hettich";
             // 
             // blok
             // 

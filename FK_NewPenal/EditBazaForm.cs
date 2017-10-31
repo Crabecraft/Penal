@@ -321,7 +321,7 @@ namespace FK_NewPenal
                            float петляВерх = float.Parse(tekFasad.textBox1.Text);
                            try
                            {
-                              петляЦентр = float.Parse(tekFasad.textBox3.Text);
+                               петляЦентр = float.Parse(tekFasad.textBox3.Text);
                            }
                            catch { }
                            float петляНиз = float.Parse(tekFasad.textBox2.Text);
@@ -355,6 +355,11 @@ namespace FK_NewPenal
                         case "ТБ":
                         returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
                         returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        break;
+
+                        case "Hettich":
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 58).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 58).ToString() + ";";
                         break;
 
                         case "ТБ С1":

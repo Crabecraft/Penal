@@ -93,7 +93,7 @@ int minimumWorkingSetSize, int maximumWorkingSetSize );
             
             if (saveFileDialog1.FileName.Trim() == "")
             {
-                saveFileDialog1.FileName = "NewPenal " + DateTime.Now.ToString().Replace(".", "_").Replace(":", "-").Replace(" ", "(") + ")";
+                saveFileDialog1.FileName = "NewPenal " + DateTime.Now.ToString().Replace(".", "-").Replace(":", "-").Replace("/", "-").Replace(" ", "_");
             }
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
