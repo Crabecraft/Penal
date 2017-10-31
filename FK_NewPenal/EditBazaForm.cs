@@ -358,8 +358,8 @@ namespace FK_NewPenal
                         break;
 
                         case "Hettich":
-                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 58).ToString() + ";";
-                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 58).ToString() + ";";
+                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
                         break;
 
                         case "ТБ С1":
