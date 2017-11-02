@@ -11,6 +11,7 @@ namespace FK_NewPenal
         Form1 form1;
         ArrayList polki;
         ArrayList urovni;
+        PolikTipView[] tex_urovni;
 
 
         public EditBazaForm(Form1 form)
@@ -53,13 +54,17 @@ namespace FK_NewPenal
 
 
             #region Уровни
+            tex_urovni = new PolikTipView[form1.arrUrovni.Count];
             if (form1.arrUrovni != null)
                 for (int i = 0; i < form1.arrUrovni.Count; i++)
                 {
                     float urr = float.Parse(form1.arrUrovni[i].ToString().Replace(",", "."));
                     urovni.Add(urr);
                     int top = getint(urr * 0.3f);
-                    panel1.Controls.Add(new Panel() { Left = xnul + 6, Top = nullpos - top - 3, Width = widthPenal - 12, Height = 6, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle });
+                    panel1.Controls.Add(new Panel() { Left = xnul + 6, Top = nullpos - top - 3, Width = widthPenal - 12, Height = 6, BackColor = System.Drawing.Color.Linen, BorderStyle = BorderStyle.FixedSingle , AccessibleName = "полки"});
+                    tex_urovni[i] = new PolikTipView() { Left = xnul + widthPenal + 5, Top = nullpos - top - 8 };
+                    panel1.Controls.Add(tex_urovni[i]);
+                
                 }
             #endregion
 
@@ -167,29 +172,20 @@ namespace FK_NewPenal
 
             if (urovni.Count > 0)
             {
-
-                if (radioButton3.Checked)
-                {
-                    if (form1.getGlubina() < 450)
-                       progstr += "щит2$FX=";
-                    else
-                       progstr += "щит3$FX=";
-                }
-                else if (radioButton4.Checked)
-                {
-                    if (form1.getGlubina() < 450)
-                        progstr += "щит2паз$FX=";
-                    else
-                        progstr += "щит3паз$FX=";
-                }
-                
-
                 for (int i = 0; i < urovni.Count; i++)
                 {
-                    string ur = urovni[i].ToString();
-                    progstr += "lpx-" + ur;
-                    if (i != urovni.Count - 1) progstr += "_";
-                    else progstr += ";";
+                    string ur = urovni[i].ToString() +";";
+
+                     if (form1.getGlubina() < 450)
+                         if (tex_urovni[i].getPazChek())
+                             progstr += "щит2паз$FX=lpx-" + ur;
+                         else
+                             progstr += "щит2$FX=lpx-" + ur;
+                     else
+                         if (tex_urovni[i].getPazChek())
+                             progstr += "щит3паз$FX=lpx-" + ur;
+                         else
+                             progstr += "щит3$FX=lpx-" + ur;
                 }
             }
 
@@ -244,29 +240,20 @@ namespace FK_NewPenal
 
             if (urovni.Count > 0)
             {
-
-                if (radioButton3.Checked)
-                {
-                    if (form1.getGlubina() < 450)
-                        progstr += "щит2$FX=";
-                    else
-                        progstr += "щит3$FX=";
-                }
-                else if (radioButton4.Checked)
-                {
-                    if (form1.getGlubina() < 450)
-                        progstr += "щит2паз$FX=";
-                    else
-                        progstr += "щит3паз$FX=";
-                }
-
-
                 for (int i = 0; i < urovni.Count; i++)
                 {
-                    string ur = urovni[i].ToString();
-                    progstr += "lpx-" + ur;
-                    if (i != urovni.Count - 1) progstr += "_";
-                    else progstr += ";";
+                    string ur = urovni[i].ToString() + ";";
+
+                    if (form1.getGlubina() < 450)
+                        if (tex_urovni[i].getPazChek())
+                            progstr += "щит2паз$FX=lpx-" + ur;
+                        else
+                            progstr += "щит2$FX=lpx-" + ur;
+                    else
+                        if (tex_urovni[i].getPazChek())
+                            progstr += "щит3паз$FX=lpx-" + ur;
+                        else
+                            progstr += "щит3$FX=lpx-" + ur;
                 }
             }
 
@@ -358,8 +345,18 @@ namespace FK_NewPenal
                         break;
 
                         case "Hettich":
-                        returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
-                        returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                            float paz = float.Parse(textBox1.Text);
+                            float glubina = form1.getGlubina() - paz;
+                            if (glubina > 370)
+                            {
+                                returmMass[0] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                                returmMass[1] += "nakolki$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                            }
+                            else
+                            {
+                                returmMass[0] += "nakolki160$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                                returmMass[1] += "nakolki160$FX=" + (tekFasad.уровень + 53).ToString() + ";";
+                            }
                         break;
 
                         case "ТБ С1":

@@ -53,3 +53,4 @@ C:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csproj.ResolveCom
 c:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.csprojResolveAssemblyReference.cache
 c:\Program Files\Git\Penal\FK_NewPenal\bin\Release\Interop.MSORUNLib.dll
 c:\Program Files\Git\Penal\FK_NewPenal\obj\Release\Interop.MSORUNLib.dll
+c:\Program Files\Git\Penal\FK_NewPenal\obj\Release\FK_NewPenal.PolikTipView.resources

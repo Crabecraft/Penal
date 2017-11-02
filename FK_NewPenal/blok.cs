@@ -63,10 +63,10 @@ namespace FK_NewPenal
                     if(((Panel)this.Parent.Controls[i]).AccessibleName == "полки")
                     {
                         Panel tempPolka = (Panel)this.Parent.Controls[i];
-                        if (tempPolka.Top > this.Top && tempPolka.Top < this.Top + this.Height || tempPolka.Top+tempPolka.Height > this.Top && tempPolka.Top+tempPolka.Height < this.Top + this.Height)
-                        {
-                           gr.DrawRectangle(pen, new Rectangle(new Point(tempPolka.Left-this.Left-2,tempPolka.Top-this.Top), new Size(tempPolka.Width, tempPolka.Height)));
-                        }
+                        //if (tempPolka.Top > this.Top && tempPolka.Top < this.Top + this.Height || tempPolka.Top+tempPolka.Height > this.Top && tempPolka.Top+tempPolka.Height < this.Top + this.Height)
+                        //{
+                           gr.DrawRectangle(pen, new Rectangle(new Point(tempPolka.Left-this.Left-2,tempPolka.Top-this.Top-2), new Size(tempPolka.Width, tempPolka.Height)));
+                        //}
                     }
             }
         }
