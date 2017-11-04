@@ -1060,7 +1060,7 @@ int minimumWorkingSetSize, int maximumWorkingSetSize );
 
         private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsNumber(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == ',' || e.KeyChar == '.' || e.KeyChar == ';')
+            if (Char.IsNumber(e.KeyChar) || e.KeyChar == '\b' || e.KeyChar == ',' || e.KeyChar == ';' || e.KeyChar == '.' || e.KeyChar == ';')
                 return;
             else
                 e.Handled = true;
